@@ -34,4 +34,26 @@ It's to make you think:
 That's a very important transition from learning syntax to solving problems.
 """
 
+structured_text = input("Enter your Text : ")
 
+fist_collon_occurance = structured_text.find(":")
+second_collon_occurance = structured_text.find(":", fist_collon_occurance + 1)
+thrid_collon_occurance = structured_text.find(":",second_collon_occurance + 1)
+last_collon_occurance = structured_text.rfind(":")
+
+first_delimeter_occurance = structured_text.find("|")
+second_delimeter_occurance = structured_text.find("|", first_delimeter_occurance + 1)
+#thrid_delimeter_occurance = structured_text.find("|", second_collon_occurance + 1)
+last_delimeter_occurance = structured_text.rfind("|")
+
+user_name = structured_text[fist_collon_occurance + 1 : first_delimeter_occurance]
+print(f"Name : {user_name}")
+
+user_age = structured_text[second_collon_occurance + 1 : second_delimeter_occurance]
+print(f"Age : {user_age}")
+
+user_role = structured_text[thrid_collon_occurance + 1: last_delimeter_occurance]
+print(f"Role : {user_role}")
+
+user_country = structured_text[last_collon_occurance + 1 : ]
+print(f"Country : {user_country}")
